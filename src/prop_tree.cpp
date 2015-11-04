@@ -174,6 +174,7 @@ ptree prop_list(const tx_input_type& tx_input)
 
     tree.put("previous_output.hash", btc256(tx_input.previous_output.hash));
     tree.put("previous_output.index", tx_input.previous_output.index);
+    tree.put("script_hex", base16(script(tx_input.script).to_data()));
     tree.put("script", script(tx_input.script).to_string());
     tree.put("sequence", tx_input.sequence);
     return tree;
